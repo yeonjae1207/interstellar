@@ -1,0 +1,218 @@
+/* 기본 설정 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  overflow: hidden;
+}
+
+/* 인터스텔라 포스터 */
+.poster {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  background-image: url("./bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 세로선 위치 */
+.gold-lines1 {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* 세로선 블러 많이 */
+.blur-strong {
+  filter: blur(3px);
+  z-index: 2;
+}
+
+/* 세로선 블러 적게 */
+.blur-light {
+  filter: blur(0.5px);
+  z-index: 3;
+}
+
+/* 가로선 위치 */
+/* 금빛 가로선 */
+.gold-lines2 {
+  position: absolute;
+  top: -60px;
+  left: 120px;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  pointer-events: none;
+}
+/* 가로선 블러 많이 */
+.blur-strong {
+  filter: blur(3px);
+  z-index: 2;
+}
+
+/* 가로선 블러 적게 */
+.blur-light {
+  filter: blur(0.5px);
+  z-index: 3;
+}
+
+/*  별 반짝이게*/
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 5px white;
+
+  animation: blink 3s infinite alternate;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0.1;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* 왼쪽 우주선 */
+.spaceship {
+  position: absolute;
+  left: 7%;
+  top: 50%;
+  width: 150px;
+
+  z-index: 4;
+  opacity: 0.55;
+  filter: blur(3px);
+
+  animation: spaceshipRotate 15s linear infinite;
+}
+
+.spaceship img {
+  display: block;
+  width: 100%;
+}
+
+@keyframes spaceshipRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 오른쪽 우주인 */
+.astronaut {
+  position: absolute;
+  left: 76%;
+  top: 40%;
+  width: 260px;
+
+  z-index: 5;
+
+  transition:
+    left 0.4s,
+    top 0.4s;
+}
+
+.astronaut img {
+  display: block;
+  width: 100%;
+}
+
+/* 영화 제목 위치*/
+
+.movie-title {
+  position: absolute;
+  left: 65%;
+  bottom: 10%;
+
+  z-index: 10;
+  color: white;
+}
+/* 영화 제목 ,애니메이션 효과 */
+
+.movie-title h1 {
+  color: white;
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+  font-size: 65px;
+  letter-spacing: 20px;
+
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    text-shadow: 0 0 5px rgba(254, 229, 36, 0.577);
+  }
+
+  50% {
+    text-shadow: 0 0 40px rgb(254, 229, 36);
+  }
+
+  100% {
+    text-shadow: 0 0 5px rgba(254, 229, 36, 0.577);
+  }
+}
+
+/* 부제목 */
+.movie-title2 h2 {
+  position: absolute;
+  right: 4%;
+  bottom: 7%;
+
+  z-index: 10;
+
+  color: rgba(255, 255, 255, 0.796);
+  font-family: "Noto Serif Display", serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+/* 감독, 배우 */
+.movie-credits {
+  display: block;
+  position: absolute;
+  left: 8%;
+  top: 30px;
+
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 0.944);
+
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
